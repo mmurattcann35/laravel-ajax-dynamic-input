@@ -55,7 +55,7 @@
 
         $("#add").click(function() {
             ++i;
-            
+
             $("#dynamicTable").append(
                 '<tr>' +
                     '<td><' +
@@ -67,9 +67,16 @@
                     '<td><' +
                     'input type="text" name="addmore['+i+'][price]" placeholder="Enter Price" class="form-control">' +
                     '</td>' +
+                    '<td>' +
+                    '<button type="button" class="btn btn-danger remove-tr">Remove</button>' +
                 '</tr>'
             );
         });
+
+
+    $(document).on('click', '.remove-tr', function(){
+        $(this).parents('tr').remove();
+    });
 </script>
 
 </body>
